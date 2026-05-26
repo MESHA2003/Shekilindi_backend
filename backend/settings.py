@@ -24,6 +24,8 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '.onrender.com',      # Allows any *.onrender.com subdomain
+    'shekilindi-frontend.vercel.app',
+    'www.shekilindi.co.tz',
 ]
 
 # Add the specific Render hostname if provided
@@ -155,6 +157,8 @@ AUTH_USER_MODEL = 'accounts.User'
 # =============================================================================
 CORS_ALLOWED_ORIGINS = [
     "https://shekilindi-herbal.vercel.app",   # current frontend
+    "https://shekilindi-frontend.vercel.app", # new frontend
+    "https://www.shekilindi.co.tz",           # live domain
     "http://localhost:3000",
     "http://localhost:5173",
 ]
@@ -177,6 +181,8 @@ if CORS_ORIGINS_ENV:
 # =============================================================================
 CSRF_TRUSTED_ORIGINS = [
     "https://*.onrender.com",
+    "https://shekilindi-frontend.vercel.app",
+    "https://www.shekilindi.co.tz",
 ]
 if RENDER_EXTERNAL_HOSTNAME:
     CSRF_TRUSTED_ORIGINS.append(f"https://{RENDER_EXTERNAL_HOSTNAME}")
